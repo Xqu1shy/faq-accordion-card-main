@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(hsl(273, 75%, 66%) 50%, hsl(240, 73%, 65%) 80%);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    color: hsl(240, 6%, 50%);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    min-width: 228px;
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2em;
+    box-shadow: 2px 6px 24px -3px rgba(0,0,0,1);
+    margin: 10em 0 5em 0;
+}
+/* TYPO */
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    color: hsl(237, 12%, 33%);
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    pointer-events: none;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: hsl(238, 29%, 16%);
+}
+
+.title-section:hover h2 {
+    color: hsl(14, 88%, 65%);
+}
+
+.title-section.active h2 {
+    font-weight: 700;
+    color: hsl(237, 12%, 33%);
+}
+
+p {
+    font-size: .9rem;
+    line-height: 1.5em;
+}
+
+/* LAYOUT */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+    margin-top: -10.5em;
+}
+
+.content::before {
+    content: " ";
+    padding-bottom: 1em;
+    width: 100%;
+    height: 15rem;
+    display: inline-block;
+    position: relative;
+    background-image: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-text {
+    height: 55px;
+    border-bottom: 2px solid hsl(240, 5%, 91%);
+    overflow: hidden;
+    padding-bottom: 1em;
+    transition: 0.5s;
+}
+
+.content-text.active {
+    height: 8.125rem;
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    cursor: pointer;
+}
+
+.title-section.active {
+    pointer-events: none;
+}
+
+.arrow {
+    margin: auto 0;
+    width: 0.7em;
+    height: 0.5em;
+    pointer-events: none;
+}
+
+.arrow.active {
+    transform: rotate(180deg);
+}
+
+.image-left {
+    display: none;
+}
+
+.box {
+    display: none;
+}
+
+@media all and (min-width: 848px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .container {
+        flex-direction: row;
+        justify-content: end;
+        padding: 5em 7em 5em 0em;
+        position: relative;
+        margin: 12em 0 12em 0;
+    }
+
+    .content {
+        width: 50%;
+        margin-top: 0;
+    }
+
+    h1 {
+        text-align: start;
+    }
+
+    .content::before {
+        content: none;
+    }
+
+    .image-left {
+        display: block;
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-left img {
+        width: 29rem;
+        height: 29rem;
+        position: absolute;
+        left: -5em;
+    }
+
+    .box {
+        display: block;
+        position: absolute;
+        left: -5.8em;
+        top: 17.8em;
+        transition: 0.5s;
+    }
+
+    .box.active{
+        transition: 0.5s;
+        left: -8em;
+        top: 17em;
+    }
+
+}
